@@ -1,5 +1,27 @@
 <div class="wrapper">
+
   <%= render "header" %>
-  <%= render "main" %>
+
+  <div class="main">
+    <%# サイドバー部分 %>
+    <div class="side-bar">
+      <p>・検索フォーム</p>
+      <br>
+      <p>・保護中相談チャットルーム</p>
+    </div>
+    <%# 画面中央部・投稿一覧など表示 %>
+    <div class="main-view">
+      <div class="main-images">
+        <%= image_tag 'test10.jpeg', class: 'image' %>
+        <%# <%= image_tag 'IMG_1123.jpeg', class: 'image' %>
+      </div>
+      <p>・アプリ紹介文記載予定</p>
+      <br>
+      <p>・投稿画像一覧表示(新着投稿３枚スライド表示)</p>
+      <br>
+      <p>・里親決定済画像一覧表示（日付新しい順３枚スライド表示）</p>
+    </div>
+  </div>
+
   <%= render "footer" %>
 </div>
