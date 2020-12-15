@@ -14,7 +14,7 @@
       <%# ログアウト実装後投稿ボタンに変更 %>
     <% else %>
         <%= link_to "会員登録", new_user_registration_path, class: 'btn' %>
-        <a href='#'>ログイン</a>
+        <%= link_to "ログイン", new_user_session_path, class: 'btn' %>
     <% end %>
   </div>
 </div>
