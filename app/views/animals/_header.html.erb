@@ -9,7 +9,7 @@
   <%# 以下リンクにするかボタンにするか悩み中（現在リンク（仮）） %>
   <%# 投稿ボタンを画面右下固定にするか悩み中 %>
     <div class="first-botton">
-      <a href='#'>新規会員登録</a>
+      <%= link_to "会員登録", new_user_registration_path, class: 'btn' %>
     </div>
     <div class="second-botton">
       <a href='#'>ログイン</a>
