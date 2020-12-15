@@ -13,4 +13,5 @@ class User < ApplicationRecord
           validates :prefecture_id
           validates :city
          end
+         has_one :prefecture
 end
