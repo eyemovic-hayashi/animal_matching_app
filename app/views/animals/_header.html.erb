@@ -10,7 +10,7 @@
   <%# 投稿ボタンを画面右下固定にするか悩み中 %>
     <% if user_signed_in? %>
       <%= link_to current_user.nickname, '#', class: 'btn' %>
-      <a href='#'>ログアウト</a>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
       <%# ログアウト実装後投稿ボタンに変更 %>
     <% else %>
         <%= link_to "会員登録", new_user_registration_path, class: 'btn' %>
