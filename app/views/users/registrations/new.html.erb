@@ -51,6 +51,39 @@
 
     <div class='form-group'>
       <div class='form-text-wrap'>
+        <label class='form-text'>ニックネーム</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例） タロネコ" %>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class='form-text'>性別</label>
+        <span class='indispensable'>必須</span>
+      </div>
+        <%= f.radio_button :gender, :男性, cheched: true %>
+        <%= f.label :gender, "男性", {value: :male, style: "display: inline-block;"} %>
+        <%= f.radio_button :gender, :女性 %>
+        <%= f.label :gender, "女性", {value: :female, style: "display: inline-block;"} %>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class='form-text'>年齢</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= f.collection_select :old_id, Old.all, :id, :name, {} %>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
         <label class='form-text'>お住まいの地域</label>
         <span class='indispensable'>必須</span>
       </div>
@@ -64,16 +97,6 @@
           <%= f.text_field :city, class:"input-default", id:"city", placeholder:"熊本市" %>
         </div>
       </div>
-    </div>
-
-    <br>
-
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>ニックネーム</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例） タロネコ" %>
     </div>
 
     <br>

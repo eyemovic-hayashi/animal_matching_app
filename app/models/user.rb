@@ -12,6 +12,9 @@ class User < ApplicationRecord
           validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: "名前（カナ）を入力してください" }
           validates :prefecture_id
           validates :city
+          validates :old_id
+          validates :gender
          end
          has_one :prefecture
+         has_one :old
 end
