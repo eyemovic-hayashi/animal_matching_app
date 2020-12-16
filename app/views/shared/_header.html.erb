@@ -1,15 +1,17 @@
 <div class="header">
   <div class="main-title">
     <%# アプリ名表示・リンク先topページ予定 %>
-    <div class="title-image">
-      <%= image_tag 'test_title.png', class: 'title-logo' %>
-    </div>
+    <%= link_to root_path do %>
+      <div class="title-image">
+        <%= image_tag 'test_title.png', class: 'title-logo' %>
+      </div>
+    <% end %>
   </div>
   <div class="some-bottons">
   <%# 以下リンクにするかボタンにするか悩み中（現在リンク（仮）） %>
   <%# 投稿ボタンを画面右下固定にするか悩み中 %>
     <% if user_signed_in? %>
-      <%= link_to current_user.nickname, '#', class: 'btn' %>
+      <%= link_to current_user.nickname, "/users/#{current_user.id}", class: 'btn' %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
       <%# ログアウト実装後投稿ボタンに変更 %>
     <% else %>
