@@ -1,0 +1,13 @@
+/* user関連のcss(registration, session, show, editなど) */
+
+/* user showページcss */
+.user-information {
+  text-align:center
+}
+
+.user-item {
+  background-color: rgb(136, 255, 0);
+  height: 40px;
+  margin: 5px 0;
+  border: crimson 1px solid;
+}

@@ -1,0 +1,58 @@
+<%= render "shared/second-header" %>
+
+<div class="user-information">
+  <div class="user-profile-tittle">
+    <%# パンクズリスト入れたい %>
+    <div class="user-contents">
+      <%= "#{@user.nickname}さんのプロフィール" %>
+    </div>
+  </div>
+
+  <div class="user-item">
+    <h1>【 プロフィール 】 </h1>
+  </div>
+
+  <div class="user-gender">
+    <div class="user-item">
+      <h1>【 性別 】</h1>
+    </div>
+    <div class="user-contents">
+      <%= @user.gender %>
+    </div>
+  </div>
+  <div class="user-old">
+    <div class="user-item">
+      <h1>【 年齢 】</h1>
+    </div>
+    <div class="user-contents">
+      <%= @user.old.name %>
+    </div>
+  </div>
+  <div class="user-prefecture">
+    <div class="user-item">
+      <h1>【 都道府県 】</h1>
+    </div>
+    <div class="user-contents">
+      <%= @user.prefecture.name %>
+    </div>
+  </div>
+  <div class="user-comment">
+    <div class="user-item">
+      <h1>【 コメント 】</h1>
+    </div>
+    <div class="user-contents">
+      <%= "コメント表示（あとで実装予定）" %>
+    </div>
+  </div>
+  <div class="user-animals">
+    <div class="user-item">
+      <%= "#{@user.nickname}さんの投稿一覧" %>
+    </div>
+    <div class="user-contents">
+      <%= "投稿した一覧表示（投稿機能実装後実装予定）" %>
+    </div>
+  </div>
+</div>
+
+<div class="edit-">
+<%= link_to "トップページに戻る", "/" %>

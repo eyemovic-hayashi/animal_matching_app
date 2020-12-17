@@ -11,7 +11,7 @@
   <%# 以下リンクにするかボタンにするか悩み中（現在リンク（仮）） %>
   <%# 投稿ボタンを画面右下固定にするか悩み中 %>
     <% if user_signed_in? %>
-      <%= link_to current_user.nickname, "/users/#{current_user.id}", class: 'btn' %>
+      <%= link_to current_user.nickname, user_path(current_user.id), class: 'btn' %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
       <%# ログアウト実装後投稿ボタンに変更 %>
     <% else %>

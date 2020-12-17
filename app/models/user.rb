@@ -15,6 +15,7 @@ class User < ApplicationRecord
           validates :old_id, numericality: { other_than: 0, message: "年齢を選択してください" }
           validates :gender
          end
-         has_one :prefecture
-         has_one :old
+         extend ActiveHash::Associations::ActiveRecordExtensions
+         belongs_to :old
+         belongs_to :prefecture
 end

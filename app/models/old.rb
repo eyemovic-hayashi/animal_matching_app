@@ -6,4 +6,7 @@ class Old < ActiveHash::Base
               {id: 6, name: '60代'}, {id: 7, name: '70代'}, {id: 8, name: '80代'},
               {id: 9, name: '90代'}
               ]
+
+  include ActiveHash::Associations
+  has_many :users
 end
