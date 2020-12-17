@@ -1,0 +1,42 @@
+<div class="inputform-tittle">
+  <h1 class="tittle-word">ユーザー編集画面</h1>
+</div>
+
+<br>
+
+<%= form_with model: @user, url: user_path, id: 'edit_user', class: 'edit-main', local: true do |f| %>
+  <div class='form-wrap'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>ログイン情報入力</h1>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">自己紹介・活動内容</label>
+      </div>
+      <%= f.text_area :comments, class:"input-default", id:"comments", placeholder:"例）猫が好きです。よろしくお願いします。", size: "40x5", maxlength: 500,autofocus: true %>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">メールアドレス</label>
+        <span class="indispensable">必須・変更可能</span>
+      </div>
+      <%= f.email_field :email, class:"input-default", id:"email", size: 40 %>
+    </div>
+
+    <br>
+
+    <div class='login-btn'>
+      <%= f.submit "更新" ,class:"login-green-btn" %>
+    </div>
+  </div>
+<% end %>
+
+<br>
+
+<%= link_to "トップページに戻る", "/" %>

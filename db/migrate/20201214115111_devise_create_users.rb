@@ -15,6 +15,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :city,               null: false
       t.integer :old_id,            null: false
       t.string :gender,             null: false
+      t.text :comments
 
       ## Recoverable
       t.string   :reset_password_token

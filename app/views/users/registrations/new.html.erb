@@ -1,6 +1,6 @@
 <%= render "shared/second-header" %>
 
-<div class="registration-tittle">
+<div class="inputform-tittle">
   <h1 class="tittle-word">新規会員登録画面</h1>
 </div>
 
@@ -24,10 +24,10 @@
       <%# 横並びにしたいがdivにする必要があるか？%>
       <div class="fullname">
         <div class="last_name">
-          <%= f.text_field :last_name, class:"input-default", id:"last_name", placeholder:"田中", autofocus: true %>
+          <%= f.text_field :last_name, class:"input-default", id:"last_name", placeholder:"田中", size: 15 ,autofocus: true %>
         </div>
         <div class="first_name">
-          <%= f.text_field :first_name, class:"input-default", id:"first_name", placeholder:"太郎" %>
+          <%= f.text_field :first_name, class:"input-default", id:"first_name", placeholder:"太郎", size: 15 %>
         </div>
       </div>
     </div>
@@ -41,10 +41,10 @@
       </div>
       <div class="fullname-kana">
         <div class="last-name-kana">
-          <%= f.text_field :last_name_kana, class:"input-default", id:"last_name_kana", placeholder:"タナカ", autofocus: true %>
+          <%= f.text_field :last_name_kana, class:"input-default", id:"last_name_kana", placeholder:"タナカ", size: 20 %>
         </div>
         <div class="first_name">
-          <%= f.text_field :first_name_kana, class:"input-default", id:"first_name_kana", placeholder:"タロウ" %>
+          <%= f.text_field :first_name_kana, class:"input-default", id:"first_name_kana", placeholder:"タロウ", size: 20 %>
         </div>
       </div>
     </div>
@@ -56,7 +56,7 @@
         <label class='form-text'>ニックネーム</label>
         <span class='indispensable'>必須</span>
       </div>
-      <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例） タロネコ" %>
+      <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例） タロネコ", size: 40 %>
     </div>
 
     <br>
@@ -96,7 +96,7 @@
         </div>
         <div class='living-city'>
           <%= f.label :city, "市" %>
-          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"熊本市" %>
+          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"熊本市", size: 40 %>
         </div>
       </div>
     </div>
@@ -108,7 +108,7 @@
         <label class='form-text'>メールアドレス</label>
         <span class='indispensable'>必須</span>
       </div>
-      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", size: 40 %>
     </div>
 
     <br>
@@ -118,7 +118,7 @@
         <label class='form-text'>パスワード（６文字以上）</label>
         <span class='indispensable'>必須</span>
       </div>
-      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字" %>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字", size: 40 %>
     </div>
 
     <br>
@@ -128,7 +128,7 @@
         <label class="form-text">パスワード(確認)</label>
         <span class="indispensable">必須</span>
       </div>
-      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
+      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい", size: 40 %>
     </div>
 
     <br>

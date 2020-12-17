@@ -38,10 +38,11 @@
   </div>
   <div class="user-comment">
     <div class="user-item">
-      <h1>【 コメント 】</h1>
+      <h1>【 自己紹介・活動内容など 】</h1>
     </div>
     <div class="user-contents">
-      <%= "コメント表示（あとで実装予定）" %>
+    <%# BOX内でenterを押すと改行。表示も改行して見えるように%>
+      <%= @user.comments %>
     </div>
   </div>
   <div class="user-animals">
@@ -54,5 +55,10 @@
   </div>
 </div>
 
-<div class="edit-">
+<div class="edit-btn">
+  <%# ボタン表示 %>
+  <%= link_to "編集", edit_user_path, method: :get, class: 'btn' %>
+</div>
+
+<br>
 <%= link_to "トップページに戻る", "/" %>
