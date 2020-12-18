@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get 'animals/index'
+  devise_for :users
+  # get 'animals/index'
   root to: "animals#index"
+  resources :users, only: [:show, :edit, :update]
 end
