@@ -1,14 +1,14 @@
 class UsersController < ApplicationController
+  before_action :user_find, only: [:show, :edit, :update]
+  before_action :move_to_index, only: [:show, :edit]
+
   def show
-    @user = User.find(params[:id])
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path
     else
@@ -17,7 +17,15 @@ class UsersController < ApplicationController
   end
 
   private
+  def user_find
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(:comments, :email)
+  end
+
+  def move_to_index
+    redirect_to root_path if current_user.id != @user.id
   end
 end
