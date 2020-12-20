@@ -26,7 +26,7 @@ RSpec.describe User, type: :model do
       it 'last_nameが英語だと登録できない' do
         @user.last_name = "abc"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name 名字を入力してください")
+        expect(@user.errors.full_messages).to include("Last name を入力してください")
       end
       it 'first_nameが空だと登録できない' do
         @user.first_name = nil
@@ -36,7 +36,7 @@ RSpec.describe User, type: :model do
       it 'first_nameが英語だと登録できない' do
         @user.first_name = "abc"
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name 名前を入力してください")
+        expect(@user.errors.full_messages).to include("First name を入力してください")
       end
       it 'last_name_kanaが空だと登録できない' do
         @user.last_name_kana = nil
@@ -46,7 +46,7 @@ RSpec.describe User, type: :model do
       it 'last_name_kanaは全角（カタカナ）が必須である' do
         @user.last_name_kana = "あいう"
         @user.valid?
-        expect(@user.errors.full_messages).to include("Last name kana 名字（カナ）を入力してください")
+        expect(@user.errors.full_messages).to include("Last name kana を入力してください")
       end
       it 'first_name_kanaが空だと登録できない' do
         @user.first_name_kana = nil
@@ -56,12 +56,12 @@ RSpec.describe User, type: :model do
       it 'first_name_kanaは全角（カタカナ）が必須である' do
         @user.first_name_kana = "あいう"
         @user.valid?
-        expect(@user.errors.full_messages).to include("First name kana 名前（カナ）を入力してください")
+        expect(@user.errors.full_messages).to include("First name kana を入力してください")
       end
       it 'prefecture_idが0だと登録できない' do
         @user.prefecture_id = 0
         @user.valid?
-        expect(@user.errors.full_messages).to include("Prefecture 都道府県を選択してください")
+        expect(@user.errors.full_messages).to include("Prefecture を選択してください")
       end
       it 'cityが空だと登録できない' do
         @user.city = nil
@@ -71,7 +71,7 @@ RSpec.describe User, type: :model do
       it 'old_idが0だと登録できない' do
         @user.old_id = 0
         @user.valid?
-        expect(@user.errors.full_messages).to include("Old 年齢を選択してください")
+        expect(@user.errors.full_messages).to include("Old を選択してください")
       end
       it 'genderが空だと登録できない' do
         @user.gender = nil
