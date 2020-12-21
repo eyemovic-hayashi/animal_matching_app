@@ -6,6 +6,6 @@ class OldMonth < ActiveHash::Base
     {id: 9, name: '9ヶ月'}, {id: 10, name: '10ヶ月'}, {id: 11, name: '11ヶ月'}
     ]
 
-include ActiveHash::Associations
-has_many :animals
+  include ActiveHash::Associations
+  has_many :animals
 end

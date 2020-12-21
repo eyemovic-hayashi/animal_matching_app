@@ -1,0 +1,148 @@
+<%= render "shared/second-header" %>
+
+<div class="inputform-tittle">
+  <h1 class="tittle-word">新規投稿画面</h1>
+</div>
+
+<br>
+
+<%= form_with model: @animal, url: animals_path, id: 'new_user', class: 'registration-main', local: true do |f| %>
+  <%# エラ〜メッセージ %>
+  <%# <%= render "users/shared/error_messages", resource: resource %>
+  <div class='form-wrap'>
+      <div class='form-header'>
+      <h1 class='form-header-text'>猫の情報入力</h1>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class='form-text'>性別</label>
+        <span class='indispensable'>必須</span>
+      </div>
+        <%= f.radio_button :sex, :雄♂, cheched: true %>
+        <%= f.label :sex, "雄♂", {value: :雄♂, style: "display: inline-block;"} %>
+        <%= f.radio_button :sex, :雌♀ %>
+        <%= f.label :sex, "雌♀", {value: :雌♀, style: "display: inline-block;"} %>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class='form-text'>推定年齢</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <div class='cat-old'>
+        <div class='cat-old-year'>
+          <%= f.label :old_year_id, "〇〇才" %>
+          <%= f.collection_select :old_year_id, OldYear.all, :id, :name, {} %>
+        </div>
+        <div class='cat-old-month'>
+          <%= f.label :old_month, "〇〇ヶ月" %>
+          <%= f.collection_select :old_month_id, OldMonth.all, :id, :name, {} %>
+        </div>
+      </div>
+      
+      <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class='form-text'>ワクチン接種</label>
+        <span class='indispensable'>必須</span>
+      </div>
+        <%= f.radio_button :vaccine, :未, cheched: true %>
+        <%= f.label :sex, "未", {value: :未, style: "display: inline-block;"} %>
+        <%= f.radio_button :vaccine, :済 %>
+        <%= f.label :sex, "済", {value: :済, style: "display: inline-block;"} %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class='form-text'>去勢手術</label>
+        <span class='indispensable'>必須</span>
+      </div>
+        <%= f.radio_button :sterilization, :未, cheched: true %>
+        <%= f.label :sex, "未", {value: :未, style: "display: inline-block;"} %>
+        <%= f.radio_button :sterilization, :済 %>
+        <%= f.label :sex, "済", {value: :済, style: "display: inline-block;"} %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">特徴（性格など）</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :character, class:"input-default", id:"character", placeholder:"例）人懐こく、呼んであげると寄ってきて膝の上に乗ります。", size: "40x5", maxlength: 500,autofocus: true %>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">里親を募集する理由</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :reason, class:"input-default", id:"reason", placeholder:"例）はぐれていたのか一匹でいるところを見つけ保護しました。住まいがペット不可の為、飼う事ができないので里親を探しています。", size: "40x5", maxlength: 500,autofocus: true %>
+    </div>
+
+    <br>
+
+    <div class='form-group'>
+      <div class='form-text-wrap'>
+        <label class='form-text'>猫がいる地域</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <div class='living-area'>
+        <%= f.label :prefecture_id, "都道府県" %>
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {} %>
+      </div>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">譲渡費用（医療費・交通費など）</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :transfer_cost, class:"input-default", id:"transfer_cost", placeholder:"例）去勢手術費用が〇〇円でしたので、ご負担をお願いします。", size: "40x5", maxlength: 500,autofocus: true %>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">その他（譲渡条件など）</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <%= f.text_area :transfer_terms, class:"input-default", id:"transfer_terms", placeholder:"例）大切に育ててくれると約束してくれる方のみ応募お願いします。", size: "40x5", maxlength: 500,autofocus: true %>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">猫画像</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <p>クリックしてファイルをアップロード</p>
+      <%= f.file_field :image, class: 'hidden' %>
+    </div>
+
+    <br>
+
+    <div class="post-btn">
+      <%= f.submit "投稿", class:'signup-green-btn' %>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'トップページに戻る', "/" %>

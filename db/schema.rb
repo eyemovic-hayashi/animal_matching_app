@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_072221) do
     t.integer "old_month_id", null: false
     t.string "vaccine", null: false
     t.string "sterilization", null: false
-    t.text "charater", null: false
+    t.text "character", null: false
     t.text "reason", null: false
     t.integer "prefecture_id", null: false
     t.text "transfer_cost", null: false
