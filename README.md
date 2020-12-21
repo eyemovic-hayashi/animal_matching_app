@@ -102,6 +102,21 @@ Usersテーブル
 | gender_id       | integer | null: false  |
 | comments        | text    |              |
 
+Animalsテーブル
+| Column          | Type    | Options      |
+| --------------- | ------- | ------------ |
+| sex             | string  | null: false  |
+| old_year_id     | integer | null: false  |
+| old_month_id    | integer | null: false  |
+| vaccine         | string  | null: false  |
+| sterilization   | string  | null: false  |
+| character       | text    | null: false  |
+| password        | text    | null: false  |
+| prefecture_id   | integer | null: false  |
+| reason          | text    | null: false  |
+| transfer_cost   | text    | null: false  |
+| transfer_terms  | text    | null: false  |
+
 <!-- 下記オプション一覧 -->
 <!-- null: false カラムが殻の状態では保存できない -->
 <!-- unique: true 一意性のみ許可（同じ値は保存できない） -->
