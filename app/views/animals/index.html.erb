@@ -3,25 +3,42 @@
   <%= render "shared/header" %>
 
   <div class="main">
-    <%# サイドバー部分 %>
-    <div class="side-bar">
+    <%# 検討中 サイドバー部分 %>
+    <%# <div class="side-bar">
+      <br>
       <p>・検索フォーム</p>
       <br>
       <p>・保護中相談チャットルーム</p>
-    </div>
+    </div> %>
     <%# 画面中央部・投稿一覧など表示 %>
     <div class="main-view">
-      <div class="main-images">
-        <%= image_tag 'test10.jpeg', class: 'image' %>
-        <%# <%= image_tag 'IMG_1123.jpeg', class: 'image' %>
-      </div>
       <p>・アプリ紹介文記載予定</p>
+      <div class="main-images">
+        <div class="main-image1">
+          <%= image_tag 'toppage3.jpeg', class: 'image' %>
+        </div>
+        <div class="main-image2">
+          <%= image_tag 'toppage1.jpeg', class: 'image' %>
+        </div>
+        <div class="main-image3">
+          <%= image_tag 'toppage4.jpeg', class: 'image' %>
+        </div>
+      </div>
+      <br>
+      <p>・検索フォーム</p>
+      <br>
+      <p>・保護中相談チャットルーム</p>
       <br>
       <p>・投稿画像一覧表示(新着投稿３枚スライド表示)</p>
       <br>
       <p>・里親決定済画像一覧表示（日付新しい順３枚スライド表示）</p>
     </div>
   </div>
+
+  <%= link_to('#', class: 'family-btn') do %>
+    <%= image_tag 'icon2.png', size:'170x70', class: "family-btn-icon" %>
+    <span class='family-btn-text'>投稿する</span>
+  <% end %>
 
   <%= render "shared/footer" %>
 </div>
