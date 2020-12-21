@@ -18,4 +18,5 @@ class User < ApplicationRecord
          extend ActiveHash::Associations::ActiveRecordExtensions
          belongs_to :old
          belongs_to :prefecture
+         has_one_attached :image
 end
