@@ -10,6 +10,7 @@ class Animal < ApplicationRecord
     validates :prefecture_id, numericality: { other_than: 0 }
     validates :transfer_cost
     validates :transfer_terms
+    validates :image
   end
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
