@@ -1,5 +1,6 @@
 class Animal < ApplicationRecord
   with_options presence:true do
+    validates :nickname
     validates :sex
     validates :old_year_id, numericality: { other_than: 0 }
     validates :old_month_id, numericality: { other_than: 0 }

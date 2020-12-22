@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2020_12_21_072221) do
   end
 
   create_table "animals", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nickname", null: false
     t.string "sex", null: false
     t.integer "old_year_id", null: false
     t.integer "old_month_id", null: false
