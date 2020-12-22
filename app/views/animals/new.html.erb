@@ -24,6 +24,8 @@
       <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例）白猫ちゃん", size: 40 %>
     </div>
 
+    <br>
+
     <div class='form-group'>
       <div class='form-text-wrap'>
         <label class='form-text'>性別</label>
@@ -33,6 +35,8 @@
         <%= f.label :sex, "雄♂", {value: :雄♂, style: "display: inline-block;"} %>
         <%= f.radio_button :sex, :雌♀ %>
         <%= f.label :sex, "雌♀", {value: :雌♀, style: "display: inline-block;"} %>
+        <%= f.radio_button :sex, :不明 %>
+        <%= f.label :sex, "不明", {value: :不明, style: "display: inline-block;"} %>
     </div>
 
     <br>
@@ -71,7 +75,7 @@
 
     <div class='form-group'>
       <div class='form-text-wrap'>
-        <label class='form-text'>去勢手術</label>
+        <label class='form-text'>避妊/去勢手術</label>
         <span class='indispensable'>必須</span>
       </div>
         <%= f.radio_button :sterilization, :未, cheched: true %>

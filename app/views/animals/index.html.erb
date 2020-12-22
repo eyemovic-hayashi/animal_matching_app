@@ -26,7 +26,7 @@
       <div class="contents row">
       <p>（仮）一覧表示</p>
         <% @animals.each do |animal| %>
-          <%= link_to animal_path(animal) do %>
+          <%= link_to animal_path(animal.id) do %>
               <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
           <% end %>
         <% end %>
