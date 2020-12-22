@@ -23,6 +23,12 @@ class AnimalsController < ApplicationController
   def edit
   end
 
+  def destroy
+    @animal = Animal.find(params[:id])
+    @animal.destroy
+    redirect_to root_path
+  end
+
   private
   def animal_params
     params.require(:animal).permit(:nickname, :sex, :old_year_id, :old_month_id, :vaccine, :sterilization, :character, :reason, :prefecture_id, :transfer_cost, :transfer_terms, :image).merge(user_id: current_user.id)
