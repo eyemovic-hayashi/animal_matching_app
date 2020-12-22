@@ -14,6 +14,17 @@
 
     <div class="form-group">
       <div class='form-text-wrap'>
+        <label class="form-text">プロフィール画像</label>
+        <span class='indispensable'>必須</span>
+      </div>
+      <p>クリックしてファイルをアップロード</p>
+      <%= f.file_field :image, class: 'hidden' %>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
         <label class="form-text">自己紹介・活動内容</label>
       </div>
       <%= f.text_area :comments, class:"input-default", id:"comments", placeholder:"例）猫が好きです。よろしくお願いします。", size: "40x5", maxlength: 500,autofocus: true %>

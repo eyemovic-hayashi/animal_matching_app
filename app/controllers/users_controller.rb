@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:comments, :email)
+    params.require(:user).permit(:comments, :email, :image)
   end
 
   def move_to_index
