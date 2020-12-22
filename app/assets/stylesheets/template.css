@@ -28,28 +28,6 @@
   align-items: center;
 }
 
-.main {
-  display: flex;
-  height: calc(100vh - 160px);
-}
-
-.side-bar {
-  background-color: brown;
-  width: 150px;
-  padding: 20px 10px 0;
-}
-
-.main-view {
-  background-color: cyan;
-  width: calc(100vw - 50px);
-  overflow: scroll;
-}
-
-.image {
-  width: 100%;
-  height: 250px;
-}
-
 .footer {
   background-color: darkorchid;
   width: 100vw;

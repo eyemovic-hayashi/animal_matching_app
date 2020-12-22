@@ -8,11 +8,13 @@
     </div>
   </div>
 
-  <div class="user-item">
-    <h1>【 プロフィール 】 </h1>
-  </div>
-
   <div class="user-gender">
+    <div class="user-item">
+      <h1>【 プロフィール画像 】</h1>
+    </div>
+    <div class="user-contents">
+      <%= image_tag @user.image.variant(resize: '250x250'), class: 'user-image' if @user.image.attached? %>
+    </div>
     <div class="user-item">
       <h1>【 性別 】</h1>
     </div>

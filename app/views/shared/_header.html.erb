@@ -15,7 +15,7 @@
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
       <%# ログアウト実装後投稿ボタンに変更 %>
     <% else %>
-        <%= link_to "会員登録", new_user_registration_path, method: :get, class: 'btn' %>
+        <%= link_to "会員登録", new_user_registration_path, class: 'btn' %>
         <%= link_to "ログイン", new_user_session_path, method: :get, class: 'btn' %>
     <% end %>
   </div>
