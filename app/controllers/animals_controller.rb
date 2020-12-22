@@ -20,8 +20,11 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
   end
 
+  def edit
+  end
+
   private
   def animal_params
-    params.require(:animal).permit(:nickname, :sex, :old_year_id, :old_month_id, :vaccine, :sterilization, :character, :reason, :prefecture_id, :transfer_cost, :transfer_terms, :image)
+    params.require(:animal).permit(:nickname, :sex, :old_year_id, :old_month_id, :vaccine, :sterilization, :character, :reason, :prefecture_id, :transfer_cost, :transfer_terms, :image).merge(user_id: current_user.id)
   end
 end

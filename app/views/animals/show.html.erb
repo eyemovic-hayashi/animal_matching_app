@@ -90,10 +90,15 @@
     </div>
   </div>
 </div>
-
-<div class="edit-btn">
-  <%# ボタン表示 %>
-  <%= link_to "編集", edit_animal_path, method: :get, class: 'btn' %>
+<div class="edit-delete-btn">
+  <div class="edit-btn">
+    <%# ボタン表示 %>
+    <%= link_to "編集", edit_animal_path, method: :get, class: 'btn' %>
+  </div>
+  <div class="delete-btn">
+    <%# ボタン表示 %>
+    <%= link_to "削除", animal_path, method: :delete, class: 'btn' %>
+  </div>
 </div>
 
 <br>

@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   root to: "animals#index"
   resources :animals
-
 end
