@@ -74,15 +74,19 @@ Animal_Matching_App
 * 新規登録ができる
 * ログイン/ログアウトができる
 * ログインしているユーザーのみがユーザー情報の編集ができる
-* ログインしているユーザーのみが新規投稿する事ができる
+* ログインしているユーザーのみが新規投稿する事ができる  
 【投稿機能】
 * 新規投稿ができる
-* ユーザー詳細ページにも画像を投稿できる
+* ユーザー詳細ページにも画像を表示できる  
+【投稿物表示機能】
+* トップページに投稿を一覧表示している
+* ユーザー詳細ページには、そのユーザーの投稿物のみ一覧表示している  
+【投稿編集機能】
+* 投稿済の情報を編集する事ができる
+* 投稿物より投稿者の詳細ページに遷移する事ができる
 - - -
 # 実装予定の機能
 - - -
-* 投稿物詳細表示機能
-* 投稿物編集機能
 * 検索機能
 * チャットルーム機能（非同期通信）
 * 近くの動物病院やペットショップ表示機能(API)
@@ -105,19 +109,20 @@ Usersテーブル
 | comments        | text    |              |
 
 Animalsテーブル
-| Column          | Type    | Options      |
-| --------------- | ------- | ------------ |
-| sex             | string  | null: false  |
-| old_year_id     | integer | null: false  |
-| old_month_id    | integer | null: false  |
-| vaccine         | string  | null: false  |
-| sterilization   | string  | null: false  |
-| character       | text    | null: false  |
-| password        | text    | null: false  |
-| prefecture_id   | integer | null: false  |
-| reason          | text    | null: false  |
-| transfer_cost   | text    | null: false  |
-| transfer_terms  | text    | null: false  |
+| Column          | Type       | Options               |
+| --------------- | ---------- | --------------------- |
+| user_id         | references | foreign_key; true     |
+| sex             | string     | null: false           |
+| old_year_id     | integer    | null: false           |
+| old_month_id    | integer    | null: false           |
+| vaccine         | string     | null: false           |
+| sterilization   | string     | null: false           |
+| character       | text       | null: false           |
+| password        | text       | null: false           |
+| prefecture_id   | integer    | null: false           |
+| reason          | text       | null: false           |
+| transfer_cost   | text       | null: false           |
+| transfer_terms  | text       | null: false           |
 
 <!-- 下記オプション一覧 -->
 <!-- null: false カラムが殻の状態では保存できない -->
