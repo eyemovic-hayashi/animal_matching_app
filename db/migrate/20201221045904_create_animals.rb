@@ -1,6 +1,8 @@
 class CreateAnimals < ActiveRecord::Migration[6.0]
   def change
     create_table :animals do |t|
+      t.references :user,        foreign_key: true
+      t.string :nickname,        null: false
       t.string :sex,             null: false
       t.integer :old_year_id,    null: false
       t.integer :old_month_id,   null: false

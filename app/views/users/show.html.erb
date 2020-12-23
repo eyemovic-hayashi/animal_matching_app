@@ -52,15 +52,31 @@
       <%= "#{@user.nickname}さんの投稿一覧" %>
     </div>
     <div class="user-contents">
-      <%= "投稿した一覧表示（投稿機能実装後実装予定）" %>
+      <% @animals.each do |animal| %>
+        <%= link_to animal_path(animal.id) do %>
+          <div class="user-animals">
+            <div class="animals-picture">
+              <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
+            </div>
+            <div class="animal-name-sex">
+              <%= "#{animal.nickname} #{animal.sex}" %>
+            </div>
+        <% end %>
+      <%end%>
     </div>
   </div>
 </div>
 
-<div class="edit-btn">
-  <%# ボタン表示 %>
-  <%= link_to "編集", edit_user_path, method: :get, class: 'btn' %>
-</div>
+<br>
+
+<% if user_signed_in? %>
+  <% if @user.id == current_user.id %>
+    <div class="edit-btn">
+      <%# ボタン表示 %>
+      <%= link_to "編集", edit_user_path, method: :get, class: 'btn' %>
+    </div>
+  <% end %>
+<% end %>
 
 <br>
 <%= link_to "トップページに戻る", "/" %>

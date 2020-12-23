@@ -1,15 +1,10 @@
 /* indexのcss */
 
 .main {
-  display: flex;
   height: calc(100vh - 160px);
+  display: flex;
+  text-align: center;
 }
-
-/* 検討中 .side-bar {
-  background-color: brown;
-  width: 150px;
-  padding: 20px 10px 0;
-} */
 
 .main-view {
   background-color: cyan;
@@ -24,6 +19,13 @@
 .image {
   width: 100%;
   height: 300px;
+  object-fit: cover;
+}
+
+.animal-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
 }
 
 .family-btn {

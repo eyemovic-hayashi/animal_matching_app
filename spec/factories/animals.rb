@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :animal do
+    nickname        { Faker::Name.initials(number: 2) }
     sex             { 1 }
     old_year_id     { 1 }
     old_month_id    { 1 }

@@ -1,1 +1,22 @@
 /* animalsアクションに関するcss */
+
+/* index */
+
+
+/* showアクション */
+.animal-information {
+  text-align:center
+}
+
+.animal-item {
+  background-color: rgb(136, 255, 0);
+  height: 40px;
+  margin: 5px 0;
+  border: crimson 1px solid;
+}
+
+.animal-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}

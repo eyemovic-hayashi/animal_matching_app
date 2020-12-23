@@ -1,0 +1,152 @@
+<%= render "shared/second-header" %>
+
+<div class="animal-information">
+  <div class="animal-profile-tittle">
+    <%# パンクズリスト入れたい %>
+    <div class="animal-contents">
+      <% if @animal.sex == "雄♂" %>
+        <%= "#{@animal.nickname}くん" %>
+      <% else %>
+        <%= "#{@animal.nickname}ちゃん" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="animal-profile-image">
+    <div class="animal-item">
+      <h1>【 画像 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= image_tag @animal.image.variant(resize: '250x250'), class: 'animal-image' if @animal.image.attached? %>
+    </div>
+  </div>
+
+  <div class="animal-sex">
+    <div class="animal-item">
+      <h1>【 性別 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.sex %>
+    </div>
+  </div>
+  <div class="animal-old">
+    <div class="animal-item">
+      <h1>【 年齢 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= "推定#{@animal.old_year.name}#{@animal.old_month.name}" %>
+    </div>
+  </div>
+  <div class="animal-prefecture">
+    <div class="animal-item">
+      <h1>【 住んでいる地域 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.prefecture.name %>
+    </div>
+  </div>
+  <div class="animal-vaccine">
+    <div class="animal-item">
+      <h1>【 ワクチンの接種 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.vaccine %>
+    </div>
+  </div>
+  <div class="animal-sterilization">
+    <div class="animal-item">
+      <h1>【 去勢手術 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.sterilization %>
+    </div>
+  </div>
+  <div class="animal-character">
+    <div class="animal-item">
+      <h1>【 特徴（性格など） 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.character %>
+    </div>
+  </div>
+  <div class="animal-reason">
+    <div class="animal-item">
+      <h1>【 里親募集する理由 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.reason %>
+    </div>
+  </div>
+  <div class="animal-transfer_cost">
+    <div class="animal-item">
+      <h1>【 譲渡費用（医療費、交通費など） 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.transfer_cost %>
+    </div>
+  </div>
+  <div class="animal-transfer_terms">
+    <div class="animal-item">
+      <h1>【 その他（譲渡条件など） 】</h1>
+    </div>
+    <div class="animal-contents">
+      <%= @animal.transfer_terms %>
+    </div>
+  </div>
+</div>
+
+<%# <br> %>
+<%# ボタンで里親申込(チャットルームに遷移) %>
+<br>
+
+<div class="user-introduce">
+  <div class="where-from">
+    <h1>掲載者</h1>
+  </div>
+</div>
+<div class="user-profile-box">
+  <div class="left-box">
+    <div class="user-picture">
+    </div>
+  </div>
+  <div class="rigth-box">
+    <div class="user-nickname">
+      <%= "掲載者： #{@animal.user.nickname}" %>
+    </div>
+    <div class="user-gender">
+      <% "性別： #{@animal.user.gender}" %>
+    </div>
+    <div class="user-old">
+      <%= "年代: #{@animal.user.old.name}" %>
+    </div>
+    <div class="user-prefecture">
+      <%= "所属県: #{@animal.user.prefecture.name}" %>
+    </div>
+  </div>
+  <div class="under-box">
+    <div class="show-profile">
+      <%= link_to "プロフィールを見る", user_path(@animal.user.id), method: :get, class: 'btn' %>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<% if user_signed_in? %>
+  <% if current_user.id == @animal.user.id %>
+    <div class="edit-delete-btn">
+      <div class="edit-btn">
+        <%# ボタン表示 %>
+        <%= link_to "編集", edit_animal_path, method: :get, class: 'btn' %>
+      </div>
+      <div class="delete-btn">
+        <%# ボタン表示 %>
+        <%= link_to "削除", animal_path, method: :delete, class: 'btn' %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<br>
+
+<%= link_to "topページに戻る", "/" %>

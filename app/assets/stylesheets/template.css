@@ -8,7 +8,7 @@
 
 .main-title {
   background-color: gold;
-  width: 75%;
+  width: 80%;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
 
 .some-bottons {
   background-color: green;
-  width: calc(100vw - 75%);
+  width: calc(100vw - 80%);
   display: flex;
   padding: 20px 5px;
   justify-content: space-around;

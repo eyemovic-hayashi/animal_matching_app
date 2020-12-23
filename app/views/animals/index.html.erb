@@ -1,18 +1,12 @@
+<%= render "shared/header" %>
+
 <div class="wrapper">
 
-  <%= render "shared/header" %>
-
   <div class="main">
-    <%# 検討中 サイドバー部分 %>
-    <%# <div class="side-bar">
-      <br>
-      <p>・検索フォーム</p>
-      <br>
-      <p>・保護中相談チャットルーム</p>
-    </div> %>
-    <%# 画面中央部・投稿一覧など表示 %>
     <div class="main-view">
-      <p>・アプリ紹介文記載予定</p>
+      <div class="test-form">
+        <p>・アプリ紹介文記載予定</p>
+      </div>
       <div class="main-images">
         <div class="main-image1">
           <%= image_tag 'toppage3.jpeg', class: 'image' %>
@@ -29,7 +23,33 @@
       <br>
       <p>・保護中相談チャットルーム</p>
       <br>
-      <p>・投稿画像一覧表示(新着投稿３枚スライド表示)</p>
+      <div class="contents row">
+      <p>（仮）一覧表示</p>
+        <% @animals.each do |animal| %>
+          <%= link_to animal_path(animal.id) do %>
+              <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
+          <% end %>
+          <div class="animal-profile">
+            <div class="animal-nickname">
+              <%= animal.nickname %>
+            </div>
+            <div class="animal-old">
+              <%= "推定#{animal.old_year.name}#{animal.old_month.name}" %>
+            </div>
+            <div class="animal-sex">
+              <%= animal.sex %>
+            </div>
+            <div class="animal-prefecture">
+              <%= animal.prefecture.name %>
+            </div>
+            <div class="user-nickname">
+              <%= link_to user_path(animal.user.id) do%>
+                <%= "投稿者 #{animal.user.nickname}さん" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
       <br>
       <p>・里親決定済画像一覧表示（日付新しい順３枚スライド表示）</p>
     </div>
@@ -40,5 +60,6 @@
     <span class='family-btn-text'>投稿する</span>
   <% end %>
 
-  <%= render "shared/footer" %>
 </div>
+
+<%= render "shared/footer" %>

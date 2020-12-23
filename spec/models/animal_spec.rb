@@ -13,6 +13,11 @@ RSpec.describe Animal, type: :model do
     end
 
     context '投稿できない時' do
+      it 'nicknameが空だと投稿できない' do
+        @animal.nickname = nil
+        @animal.valid?
+        expect(@animal.errors.full_messages).to include("Nickname can't be blank")
+      end
       it 'sexが空だと投稿できない' do
         @animal.sex = nil
         @animal.valid?

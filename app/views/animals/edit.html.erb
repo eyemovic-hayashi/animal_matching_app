@@ -1,27 +1,15 @@
-<%= render "shared/second-header" %>
-
 <div class="inputform-tittle">
-  <h1 class="tittle-word">新規投稿画面</h1>
+  <h1 class="tittle-word">投稿編集画面</h1>
 </div>
 
 <br>
 
-<%= form_with model: @animal, url: animals_path, id: 'new-animal', class: 'new-animal', local: true do |f| %>
+<%= form_with model: @animal, url: animal_path, id: 'new-animal', class: 'new-animal', local: true do |f| %>
   <%# エラ〜メッセージ %>
   <%# <%= render "users/shared/error_messages", resource: resource %>
   <div class='form-wrap'>
       <div class='form-header'>
       <h1 class='form-header-text'>猫の情報入力</h1>
-    </div>
-
-    <br>
-
-    <div class="form-group">
-      <div class="form-text-wrap">
-        <label class='form-text'>ニックネーム・呼び名</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例）白猫ちゃん", size: 40 %>
     </div>
 
     <br>
@@ -99,29 +87,6 @@
 
     <div class="form-group">
       <div class='form-text-wrap'>
-        <label class="form-text">里親を募集する理由</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <%= f.text_area :reason, class:"input-default", id:"reason", placeholder:"例）はぐれていたのか一匹でいるところを見つけ保護しました。住まいがペット不可の為、飼う事ができないので里親を探しています。", size: "40x5", maxlength: 500,autofocus: true %>
-    </div>
-
-    <br>
-
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>猫がいる地域</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <div class='living-area'>
-        <%= f.label :prefecture_id, "都道府県" %>
-        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {} %>
-      </div>
-    </div>
-
-    <br>
-
-    <div class="form-group">
-      <div class='form-text-wrap'>
         <label class="form-text">譲渡費用（医療費・交通費など）</label>
         <span class='indispensable'>必須</span>
       </div>
@@ -152,9 +117,9 @@
     <br>
 
     <div class="post-btn">
-      <%= f.submit "投稿", class:'signup-green-btn' %>
+      <%= f.submit "更新", class:'signup-green-btn' %>
     </div>
   </div>
 <% end %>
 
-<%= link_to 'トップページに戻る', "/" %>
+<%= link_to "topページに戻る", "/" %>
