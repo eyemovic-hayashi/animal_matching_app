@@ -1,7 +1,7 @@
 class AnimalsController < ApplicationController
   before_action :animal_find, only: [:show, :edit, :destroy]
   def index
-    @animals = Animal.all
+    @animals = Animal.includes(:user)
   end
 
   def new
