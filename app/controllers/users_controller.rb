@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :user_find, only: [:show, :edit, :update]
-  before_action :move_to_index, only: [:show, :edit]
+  before_action :move_to_index, only: [:edit]
 
   def show
   end

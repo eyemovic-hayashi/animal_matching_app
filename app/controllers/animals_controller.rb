@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  before_action :animal_find, only: [:show, :edit, :destroy]
   def index
     @animals = Animal.all
   end
@@ -17,12 +18,11 @@ class AnimalsController < ApplicationController
   end
 
   def show
-    @animal = Animal.find(params[:id])
   end
 
   def edit
-    @animal = Animal.find(params[:id])
   end
+
   # else時エラーメッセージ出力必要あり
   def update
     animal = Animal.find(params[:id])
@@ -34,12 +34,15 @@ class AnimalsController < ApplicationController
   end
 
   def destroy
-    @animal = Animal.find(params[:id])
     @animal.destroy
     redirect_to root_path
   end
 
   private
+  def animal_find
+    @animal = Animal.find(params[:id])
+  end
+
   def animal_params
     params.require(:animal).permit(:nickname, :sex, :old_year_id, :old_month_id, :vaccine, :sterilization, :character, :reason, :prefecture_id, :transfer_cost, :transfer_terms, :image).merge(user_id: current_user.id)
   end

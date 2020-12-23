@@ -29,6 +29,15 @@
           <%= link_to animal_path(animal.id) do %>
               <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
           <% end %>
+          <div class="profile">
+            <%= animal.nickname %>
+            <%= "推定#{animal.old_year.name}#{animal.old_month.name}" %>
+            <%= animal.sex %>
+            <%= animal.prefecture.name %>
+            <%= link_to user_path(animal.user.id) do%>
+              <%= "投稿者 #{animal.user.nickname}さん" %>
+            <% end %>
+          </div>
         <% end %>
       </div>
       <br>
