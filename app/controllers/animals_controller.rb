@@ -1,4 +1,5 @@
 class AnimalsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :animal_find, only: [:show, :edit, :destroy]
   def index
     @animals = Animal.includes(:user)

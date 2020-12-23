@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, except: [:show]
   before_action :user_find, only: [:show, :edit, :update]
   before_action :move_to_index, only: [:edit]
 
   def show
+    @animals = @user.animals
   end
 
   def edit

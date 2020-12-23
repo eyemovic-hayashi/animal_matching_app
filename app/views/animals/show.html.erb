@@ -4,7 +4,11 @@
   <div class="animal-profile-tittle">
     <%# パンクズリスト入れたい %>
     <div class="animal-contents">
-      <%= "#{@animal.nickname}さんのプロフィール" %>
+      <% if @animal.sex == "雄♂" %>
+        <%= "#{@animal.nickname}くん" %>
+      <% else %>
+        <%= "#{@animal.nickname}ちゃん" %>
+      <% end %>
     </div>
   </div>
 
@@ -90,17 +94,19 @@
     </div>
   </div>
 </div>
-<% if current_user.id == @animal.user.id %>
-  <div class="edit-delete-btn">
-    <div class="edit-btn">
-      <%# ボタン表示 %>
-      <%= link_to "編集", edit_animal_path, method: :get, class: 'btn' %>
+<% if user_signed_in? %>
+  <% if current_user.id == @animal.user.id %>
+    <div class="edit-delete-btn">
+      <div class="edit-btn">
+        <%# ボタン表示 %>
+        <%= link_to "編集", edit_animal_path, method: :get, class: 'btn' %>
+      </div>
+      <div class="delete-btn">
+        <%# ボタン表示 %>
+        <%= link_to "削除", animal_path, method: :delete, class: 'btn' %>
+      </div>
     </div>
-    <div class="delete-btn">
-      <%# ボタン表示 %>
-      <%= link_to "削除", animal_path, method: :delete, class: 'btn' %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
 
 <br>

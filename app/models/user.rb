@@ -16,6 +16,7 @@ class User < ApplicationRecord
           validates :gender
          end
          has_one_attached :image
+         has_many :animals
          extend ActiveHash::Associations::ActiveRecordExtensions
          belongs_to :old
          belongs_to :prefecture
