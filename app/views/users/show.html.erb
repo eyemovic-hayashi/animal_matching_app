@@ -53,11 +53,21 @@
     </div>
     <div class="user-contents">
       <% @animals.each do |animal| %>
-        <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
+        <%= link_to animal_path(animal.id) do %>
+          <div class="user-animals">
+            <div class="animals-picture">
+              <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
+            </div>
+            <div class="animal-name-sex">
+              <%= "#{animal.nickname} #{animal.sex}" %>
+            </div>
+        <% end %>
       <%end%>
     </div>
   </div>
 </div>
+
+<br>
 
 <% if user_signed_in? %>
   <% if @user.id == current_user.id %>

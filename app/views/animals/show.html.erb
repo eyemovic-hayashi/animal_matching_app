@@ -94,6 +94,44 @@
     </div>
   </div>
 </div>
+
+<%# <br> %>
+<%# ボタンで里親申込(チャットルームに遷移) %>
+<br>
+
+<div class="user-introduce">
+  <div class="where-from">
+    <h1>掲載者</h1>
+  </div>
+</div>
+<div class="user-profile-box">
+  <div class="left-box">
+    <div class="user-picture">
+    </div>
+  </div>
+  <div class="rigth-box">
+    <div class="user-nickname">
+      <%= "掲載者： #{@animal.user.nickname}" %>
+    </div>
+    <div class="user-gender">
+      <% "性別： #{@animal.user.gender}" %>
+    </div>
+    <div class="user-old">
+      <%= "年代: #{@animal.user.old.name}" %>
+    </div>
+    <div class="user-prefecture">
+      <%= "所属県: #{@animal.user.prefecture.name}" %>
+    </div>
+  </div>
+  <div class="under-box">
+    <div class="show-profile">
+      <%= link_to "プロフィールを見る", user_path(@animal.user.id), method: :get, class: 'btn' %>
+    </div>
+  </div>
+</div>
+
+<br>
+
 <% if user_signed_in? %>
   <% if current_user.id == @animal.user.id %>
     <div class="edit-delete-btn">
