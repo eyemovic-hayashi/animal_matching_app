@@ -1,25 +1,27 @@
 /* indexのcss */
 
 .main {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 180px);
   display: flex;
   text-align: center;
 }
 
 .main-view {
-  background-color: cyan;
   width: 100vw;
   overflow: scroll;
 }
 
 .main-images {
   display: flex;
+  width: 80vw;
+  height: 500px;
+  border: solid red 1px;
+  margin:0 auto;
+  justify-content: space-around;
 }
 
 .image {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
+  border: 1px blue solid;
 }
 
 .animal-image {
@@ -27,6 +29,11 @@
   height: 250px;
   object-fit: cover;
 }
+
+.post-animals {
+  display: flex;
+}
+
 
 .family-btn {
   width: 120px;

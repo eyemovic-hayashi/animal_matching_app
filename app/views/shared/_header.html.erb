@@ -1,13 +1,8 @@
 <div class="header">
-  <div class="main-title">
-    <%# アプリ名表示・リンク先topページ予定 %>
-    <%= link_to root_path do %>
-      <div class="title-image">
-        <%= image_tag 'test_title.png', class: 'title-logo' %>
-      </div>
-    <% end %>
+  <div class="left-box">
+    <%= image_tag "index-tittle-logo.png", class: "image" %>
   </div>
-  <div class="some-bottons">
+  <div class="right-box">
   <%# 以下リンクにするかボタンにするか悩み中（現在リンク（仮）） %>
   <%# 投稿ボタンを画面右下固定にするか悩み中 %>
     <% if user_signed_in? %>

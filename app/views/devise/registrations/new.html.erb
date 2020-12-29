@@ -1,143 +1,145 @@
 <%= render "shared/second-header" %>
 
-<div class="inputform-tittle">
-  <h1 class="tittle-word">新規会員登録画面</h1>
-</div>
+<div class="input-form">
+  <div class="input-form-tittle">
+    <h1 class="tittle-word">新規会員登録画面</h1>
+  </div>
 
 <br>
 
-<%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'registration-main', local: true do |f| %>
-  <%# エラ〜メッセージ %>
-  <%# <%= render "users/shared/error_messages", resource: resource %>
-  <div class='form-wrap'>
+  <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'form-view-main', local: true do |f| %>
+    <%# エラ〜メッセージ %>
+    <%# <%= render "users/shared/error_messages", resource: resource %>
+    <div class='form-wrap'>
       <div class='form-header'>
-      <h1 class='form-header-text'>会員情報入力</h1>
-    </div>
-
-    <br>
-
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>氏名</label>
-        <span class='indispensable'>必須</span>
+        <h1 class='form-header-text'>会員情報入力</h1>
       </div>
-      <%# 横並びにしたいがdivにする必要があるか？%>
-      <div class="fullname">
-        <div class="last_name">
-          <%= f.text_field :last_name, class:"input-default", id:"last_name", placeholder:"田中", size: 15 ,autofocus: true %>
-        </div>
-        <div class="first_name">
-          <%= f.text_field :first_name, class:"input-default", id:"first_name", placeholder:"太郎", size: 15 %>
-        </div>
-      </div>
-    </div>
 
-    <br>
+      <br>
 
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>氏名（カナ）</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <div class="fullname-kana">
-        <div class="last-name-kana">
-          <%= f.text_field :last_name_kana, class:"input-default", id:"last_name_kana", placeholder:"タナカ", size: 20 %>
+      <div class='form-group'>
+        <div class='form-text-wrap'>
+          <label class='form-text'>氏名</label>
+          <span class='indispensable'>必須</span>
         </div>
-        <div class="first_name">
-          <%= f.text_field :first_name_kana, class:"input-default", id:"first_name_kana", placeholder:"タロウ", size: 20 %>
+        <%# 横並びにしたいがdivにする必要があるか？%>
+        <div class="fullname">
+          <div class="last_name">
+            <%= f.text_field :last_name, class:"input-default", id:"last_name", placeholder:"田中", size: 15 ,autofocus: true %>
+          </div>
+          <div class="first_name">
+            <%= f.text_field :first_name, class:"input-default", id:"first_name", placeholder:"太郎", size: 15 %>
+          </div>
         </div>
       </div>
-    </div>
 
-    <br>
+      <br>
 
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>ニックネーム</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例） タロネコ", size: 40 %>
-    </div>
-
-    <br>
-
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>性別</label>
-        <span class='indispensable'>必須</span>
-      </div>
-        <%= f.radio_button :gender, :男性, cheched: true %>
-        <%= f.label :gender, "男性", {value: :male, style: "display: inline-block;"} %>
-        <%= f.radio_button :gender, :女性 %>
-        <%= f.label :gender, "女性", {value: :female, style: "display: inline-block;"} %>
-    </div>
-
-    <br>
-
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>年齢</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <%= f.collection_select :old_id, Old.all, :id, :name, {} %>
-    </div>
-
-    <br>
-
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>お住まいの地域</label>
-        <span class='indispensable'>必須</span>
-      </div>
-      <div class='living-area'>
-        <div class='living-prefecture'>
-          <%= f.label :prefecture_id, "都道府県" %>
-          <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {} %>
+      <div class='form-group'>
+        <div class='form-text-wrap'>
+          <label class='form-text'>氏名（カナ）</label>
+          <span class='indispensable'>必須</span>
         </div>
-        <div class='living-city'>
-          <%= f.label :city, "市" %>
-          <%= f.text_field :city, class:"input-default", id:"city", placeholder:"熊本市", size: 40 %>
+        <div class="fullname-kana">
+          <div class="last-name-kana">
+            <%= f.text_field :last_name_kana, class:"input-default", id:"last_name_kana", placeholder:"タナカ", size: 20 %>
+          </div>
+          <div class="first_name">
+            <%= f.text_field :first_name_kana, class:"input-default", id:"first_name_kana", placeholder:"タロウ", size: 20 %>
+          </div>
         </div>
       </div>
-    </div>
 
-    <br>
+      <br>
 
-    <div class='form-group'>
-      <div class='form-text-wrap'>
-        <label class='form-text'>メールアドレス</label>
-        <span class='indispensable'>必須</span>
+      <div class='form-group'>
+        <div class='form-text-wrap'>
+          <label class='form-text'>ニックネーム</label>
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例） タロネコ", size: 40 %>
       </div>
-      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", size: 40 %>
-    </div>
 
-    <br>
+      <br>
 
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class='form-text'>パスワード（６文字以上）</label>
-        <span class='indispensable'>必須</span>
+      <div class='form-group'>
+        <div class='form-text-wrap'>
+          <label class='form-text'>性別</label>
+          <span class='indispensable'>必須</span>
+        </div>
+          <%= f.radio_button :gender, :男性, cheched: true %>
+          <%= f.label :gender, "男性", {value: :male, style: "display: inline-block;"} %>
+          <%= f.radio_button :gender, :女性 %>
+          <%= f.label :gender, "女性", {value: :female, style: "display: inline-block;"} %>
       </div>
-      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字", size: 40 %>
-    </div>
 
-    <br>
+      <br>
 
-    <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">パスワード(確認)</label>
-        <span class="indispensable">必須</span>
+      <div class='form-group'>
+        <div class='form-text-wrap'>
+          <label class='form-text'>年齢</label>
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.collection_select :old_id, Old.all, :id, :name, {} %>
       </div>
-      <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい", size: 40 %>
-    </div>
 
-    <br>
+      <br>
 
-    <div class="signup-btn">
-      <%= f.submit "会員登録", class:'signup-blue-btn' %>
+      <div class='form-group'>
+        <div class='form-text-wrap'>
+          <label class='form-text'>お住まいの地域</label>
+          <span class='indispensable'>必須</span>
+        </div>
+        <div class='living-area'>
+          <div class='living-prefecture'>
+            <%= f.label :prefecture_id, "都道府県" %>
+            <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {} %>
+          </div>
+          <div class='living-city'>
+            <%= f.label :city, "市" %>
+            <%= f.text_field :city, class:"input-default", id:"city", placeholder:"熊本市", size: 40 %>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class='form-group'>
+        <div class='form-text-wrap'>
+          <label class='form-text'>メールアドレス</label>
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", size: 40 %>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class='form-text'>パスワード（６文字以上）</label>
+          <span class='indispensable'>必須</span>
+        </div>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"6文字以上の半角英数字", size: 40 %>
+      </div>
+
+      <br>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">パスワード(確認)</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい", size: 40 %>
+      </div>
+
+      <br>
+
+      <div class="signup-btn">
+        <%= f.submit "会員登録", class:'signup-blue-btn' %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
 
 <br>
 <%# 仮置き戻るリンク %>

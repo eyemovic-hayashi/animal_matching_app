@@ -9,46 +9,35 @@
       </div>
       <div class="main-images">
         <div class="main-image1">
-          <%= image_tag 'toppage3.jpeg', class: 'image' %>
+          <%= image_tag 'post.animal.png', class: 'image' %>
         </div>
         <div class="main-image2">
-          <%= image_tag 'toppage1.jpeg', class: 'image' %>
-        </div>
-        <div class="main-image3">
-          <%= image_tag 'toppage4.jpeg', class: 'image' %>
+          <%= image_tag 'find.animal.png', class: 'image' %>
         </div>
       </div>
       <br>
-      <p>・検索フォーム</p>
-      <br>
-      <p>・保護中相談チャットルーム</p>
-      <br>
       <div class="contents row">
-      <p>（仮）一覧表示</p>
-        <% @animals.each do |animal| %>
-          <%= link_to animal_path(animal.id) do %>
-              <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
-          <% end %>
-          <div class="animal-profile">
-            <div class="animal-nickname">
-              <%= animal.nickname %>
-            </div>
-            <div class="animal-old">
-              <%= "推定#{animal.old_year.name}#{animal.old_month.name}" %>
-            </div>
-            <div class="animal-sex">
-              <%= animal.sex %>
-            </div>
-            <div class="animal-prefecture">
-              <%= animal.prefecture.name %>
-            </div>
-            <div class="user-nickname">
-              <%= link_to user_path(animal.user.id) do%>
-                <%= "投稿者 #{animal.user.nickname}さん" %>
+        <h1>（仮）一覧表示</h1>
+        <div class= "post-animals">
+          <% @animals.each do |animal| %>
+            <div class="post-animal">
+              <%= link_to animal_path(animal.id) do %>
+                  <%= image_tag animal.image.variant(resize: '250x250'), class: 'animal-image' if animal.image.attached? %>
               <% end %>
+              <div class="animal-profile">
+                <div class="animal-simple-prifile">
+                  <p><%= animal.nickname %></p>
+                  <p><%= "推定#{animal.old_year.name}#{animal.old_month.name}" %></p>
+                  <p><%= animal.sex %></p>
+                  <p><%= animal.prefecture.name %></p>
+                  <%= link_to user_path(animal.user.id) do%>
+                    <p><%= "投稿者 #{animal.user.nickname}さん" %></p>
+                  <% end %>
+                </div>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
       <br>
       <p>・里親決定済画像一覧表示（日付新しい順３枚スライド表示）</p>

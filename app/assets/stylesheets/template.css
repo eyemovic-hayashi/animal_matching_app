@@ -1,26 +1,17 @@
 /* メイン部分テンプレcss */
 
 .header {
-  background-color: rgb(0, 0, 0);
-  height: 120px;
+  height: 140px;
   display: flex;
 }
 
-.main-title {
-  background-color: gold;
+.left-box {
+  border: blue 1px solid;
   width: 80%;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.title-logo {
-  width: 100%;
-}
-
-.some-bottons {
-  background-color: green;
+.right-box {
+  border: blue 1px solid;
   width: calc(100vw - 80%);
   display: flex;
   padding: 20px 5px;
@@ -29,7 +20,7 @@
 }
 
 .footer {
-  background-color: darkorchid;
+  border: blue 1px solid;
   width: 100vw;
   height: 40px;
   padding: 10px 30px;
